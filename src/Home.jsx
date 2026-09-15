@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "./component/Header";
 
 export default function Home() {
@@ -7,10 +8,9 @@ export default function Home() {
     const formData = new FormData(event.currentTarget);
     // Get the value of the input named "ingredient"
     const newIngredient = formData.get("ingredient");
-    ingredients.push(newIngredient)
-    document.write(ingredients);
+    setIngredients(prevIngredients => [...prevIngredients, newIngredient])
   }
-  const ingredients = ["Chicken", "Oregano", "Tomatoes"];
+  const [ingredients, setIngredients] = useState([]);
 
   const ingredientsListItems = ingredients.map((ingredient) => (
     <li key={ingredient}>{ingredient}</li>
