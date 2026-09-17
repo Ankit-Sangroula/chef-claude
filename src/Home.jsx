@@ -2,10 +2,10 @@ import { useState } from "react";
 import Header from "./component/Header";
 
 export default function Home() {
-  function handleSubmit(event) {
-    event.preventDefault();
+  function addIngredient(formData) {
+    // event.preventDefault();
     // Get all the data from the submitted form
-    const formData = new FormData(event.currentTarget);
+    // const formData = new FormData(event.currentTarget);
     // Get the value of the input named "ingredient"
     const newIngredient = formData.get("ingredient");
     setIngredients(prevIngredients => [...prevIngredients, newIngredient])
@@ -18,9 +18,9 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <form
+      <form action={addIngredient}
         className="flex justify-center items-center mt-30 gap-3"
-        onSubmit={handleSubmit}
+        
       >
         <input
           type="text"
