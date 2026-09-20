@@ -38,7 +38,10 @@ export default function Home() {
         </button>
       </form>
 
-      <section className="max-w-[664px] mx-auto mt-7">
+      {ingredients.length > 0 && (
+
+        
+        <section className="max-w-[664px] mx-auto mt-7">
         
         <h2 className="text-[30px] font-bold mb-4">
           Ingredients on hand:
@@ -69,6 +72,7 @@ export default function Home() {
 
         </div>
       </section>
+  )}
     </div>
   );
 }
