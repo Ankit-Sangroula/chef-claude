@@ -17,9 +17,7 @@ export default function Home() {
   ]);
   const [recipeShown, setRecipeShown] = useState(false);
 
-  const ingredientsListItems = ingredients.map((ingredient) => (
-    <li key={ingredient}>{ingredient}</li>
-  ));
+
 
   function toggleRecipeShown() {
     setRecipeShown((prevShown) => !prevShown);
@@ -46,7 +44,7 @@ export default function Home() {
       </form>
 
       {ingredients.length > 0 && (
-       <Ingredients/>
+       <Ingredients ingredients={ingredients} toogleRecipeShown={toggleRecipeShown}/>
       )}
       {recipeShown && (<Recipe/>
       )}
